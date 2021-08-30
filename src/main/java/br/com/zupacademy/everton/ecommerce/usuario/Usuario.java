@@ -1,5 +1,6 @@
 package br.com.zupacademy.everton.ecommerce.usuario;
 
+import br.com.zupacademy.everton.ecommerce.Validation.ValorUnico;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -33,7 +34,7 @@ public class Usuario {
     /**
      *
      * @param login login com formato de email
-     * @param senha senha em texto limpo, sem criptografia 
+     * @param senha senha em texto limpo, sem criptografia
      */
     public Usuario(@Email @NotBlank String login, @NotBlank @Length(min = 6) String senha) {
         this.login = login;
