@@ -2,7 +2,10 @@ package br.com.zupacademy.everton.ecommerce.categoria.cadastrocategoria;
 
 import br.com.zupacademy.everton.ecommerce.categoria.Categoria;
 import br.com.zupacademy.everton.ecommerce.categoria.CategoriaRepository;
+import br.com.zupacademy.everton.ecommerce.usuario.Usuario;
+import br.com.zupacademy.everton.ecommerce.usuario.cadastrousuario.UsuarioForm;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
