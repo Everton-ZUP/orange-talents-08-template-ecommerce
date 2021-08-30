@@ -25,7 +25,6 @@ public class ValorUnicoValidator implements ConstraintValidator<ValorUnico,Objec
 
     @Override
     public boolean isValid(Object value, ConstraintValidatorContext context) {
-        System.out.println("HEHE");
         Query sql = manager.createQuery("select 1 from "+classe.getName()+" where "+campoParaValidar+" = :value");
         sql.setParameter("value", value);
         List<?> retorno = sql.getResultList();

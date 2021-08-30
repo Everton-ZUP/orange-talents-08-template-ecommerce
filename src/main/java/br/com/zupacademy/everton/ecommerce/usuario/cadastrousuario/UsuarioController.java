@@ -11,11 +11,11 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/usuarios")
-public class ControllerUsuario {
+public class UsuarioController {
 
     private final UsuarioRepository repositorio;
 
-    public ControllerUsuario(UsuarioRepository repo) {
+    public UsuarioController(UsuarioRepository repo) {
         this.repositorio = repo;
     }
 
