@@ -1,5 +1,6 @@
 package br.com.zupacademy.everton.ecommerce.Validation;
 
+import org.springframework.beans.NotReadablePropertyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
@@ -24,6 +25,16 @@ public class GenericControlerAdvice {
 
         globalErrors.forEach(erro -> erros.AddError(erro.getDefaultMessage()));
         fieldErrors.forEach(erro -> erros.addErrorField(erro.getField(),erro.getRejectedValue(),erro.getDefaultMessage()));
+
+        return erros;
+    }
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(NotReadablePropertyException.class)
+    public ReturnError validacao2(NotReadablePropertyException exception){
+        ReturnError erros = new ReturnError();
+
+        erros.AddError(exception.getLocalizedMessage());
 
         return erros;
     }

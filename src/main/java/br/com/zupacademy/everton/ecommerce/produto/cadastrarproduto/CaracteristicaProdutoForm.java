@@ -28,11 +28,4 @@ public class CaracteristicaProdutoForm {
         return new CaracteristicaProduto(this.nome,this.descricao);
     }
 
-    @Override
-    public String toString() {
-        return "CaracteristicaProdutoForm{" +
-                "nome='" + nome + '\'' +
-                ", descricao='" + descricao + '\'' +
-                '}';
-    }
 }

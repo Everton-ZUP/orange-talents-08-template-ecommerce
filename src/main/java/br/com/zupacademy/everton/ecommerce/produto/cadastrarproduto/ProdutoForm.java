@@ -36,7 +36,7 @@ public class ProdutoForm {
     @Size(min = 3) @Valid
     private List<CaracteristicaProdutoForm> caracteristicas;
 
-    public ProdutoForm(String nome, BigDecimal valor, Integer quantidade, String descricao, Long idCategoria, List<CaracteristicaProdutoForm> caracteristicas) {
+    public ProdutoForm(String nome, BigDecimal valor, Integer quantidade, String descricao, Long idCategoria, @Valid List<CaracteristicaProdutoForm> caracteristicas) {
         this.nome = nome;
         this.valor = valor;
         this.quantidade = quantidade;
@@ -49,7 +49,6 @@ public class ProdutoForm {
     public Produto paraProduto(CategoriaRepository categoriaRepositorio) {
         Categoria categoria = categoriaRepositorio.findById(idCategoria).get();
         Produto produto = new Produto(nome,valor,quantidade,descricao,categoria);
-        caracteristicas.forEach(car -> System.out.println(car));
         caracteristicas.forEach(caracteristica -> produto.adicionaCaracteristica(caracteristica.toCaracteristicaProduto()));
         return produto;
     }
