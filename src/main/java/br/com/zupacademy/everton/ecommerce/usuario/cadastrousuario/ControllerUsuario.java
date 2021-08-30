@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 @RestController
@@ -14,12 +15,12 @@ public class ControllerUsuario {
 
     private final UsuarioRepository repositorio;
 
-    @Autowired
     public ControllerUsuario(UsuarioRepository repo) {
         this.repositorio = repo;
     }
 
     @PostMapping
+    @Transactional
     @ResponseStatus(HttpStatus.CREATED)
     public UsuarioDto adicionar(@RequestBody @Valid UsuarioForm formulario){
         Usuario usuario = formulario.paraUsuario();
