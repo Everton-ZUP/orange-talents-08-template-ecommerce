@@ -1,4 +1,4 @@
-package br.com.zupacademy.everton.ecommerce.usuario.cadastro;
+package br.com.zupacademy.everton.ecommerce.usuario.cadastrousuario;
 
 
 import br.com.zupacademy.everton.ecommerce.usuario.Usuario;
@@ -20,7 +20,7 @@ public class UsuarioForm {
         this.senha = senha;
     }
 
-    public Usuario toModel() {
+    public Usuario paraUsuario() {
         return new Usuario(this.login,this.senha);
     }
 }

@@ -30,6 +30,11 @@ public class Usuario {
     @Deprecated
     public Usuario() {    }
 
+    /**
+     *
+     * @param login login com formato de email
+     * @param senha senha em texto limpo, sem criptografia 
+     */
     public Usuario(@Email @NotBlank String login, @NotBlank @Length(min = 6) String senha) {
         this.login = login;
         this.senha = new BCryptPasswordEncoder().encode(senha);

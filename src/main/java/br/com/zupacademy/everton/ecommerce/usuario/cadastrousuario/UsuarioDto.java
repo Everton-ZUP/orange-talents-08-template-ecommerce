@@ -1,10 +1,8 @@
-package br.com.zupacademy.everton.ecommerce.usuario.cadastro;
+package br.com.zupacademy.everton.ecommerce.usuario.cadastrousuario;
 
 import br.com.zupacademy.everton.ecommerce.usuario.Usuario;
 
-import java.text.DateFormat;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class UsuarioDto {
 

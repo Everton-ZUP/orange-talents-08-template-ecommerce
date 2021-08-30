@@ -1,4 +1,4 @@
-package br.com.zupacademy.everton.ecommerce.usuario.cadastro;
+package br.com.zupacademy.everton.ecommerce.usuario.cadastrousuario;
 
 import br.com.zupacademy.everton.ecommerce.usuario.Usuario;
 import br.com.zupacademy.everton.ecommerce.usuario.UsuarioRepository;
@@ -22,7 +22,7 @@ public class ControllerUsuario {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public UsuarioDto adicionar(@RequestBody @Valid UsuarioForm formulario){
-        Usuario usuario = formulario.toModel();
+        Usuario usuario = formulario.paraUsuario();
         repositorio.save(usuario);
         return new UsuarioDto(usuario);
     }
