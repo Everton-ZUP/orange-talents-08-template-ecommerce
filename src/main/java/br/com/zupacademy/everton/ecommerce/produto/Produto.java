@@ -83,6 +83,10 @@ public class Produto {
         return caracteristicas;
     }
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
     public boolean pertenceAoUsuario(Long id) {
         return this.id == id;
     }
