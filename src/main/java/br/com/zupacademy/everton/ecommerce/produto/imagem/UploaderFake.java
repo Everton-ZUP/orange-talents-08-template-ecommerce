@@ -1,4 +1,4 @@
-package br.com.zupacademy.everton.ecommerce.produto;
+package br.com.zupacademy.everton.ecommerce.produto.imagem;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;

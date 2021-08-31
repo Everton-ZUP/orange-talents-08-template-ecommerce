@@ -1,4 +1,6 @@
-package br.com.zupacademy.everton.ecommerce.produto;
+package br.com.zupacademy.everton.ecommerce.produto.imagem;
+
+import br.com.zupacademy.everton.ecommerce.produto.Produto;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;

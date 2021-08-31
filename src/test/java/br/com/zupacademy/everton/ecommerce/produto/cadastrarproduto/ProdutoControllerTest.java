@@ -4,6 +4,7 @@ import br.com.zupacademy.everton.ecommerce.categoria.Categoria;
 import br.com.zupacademy.everton.ecommerce.categoria.CategoriaRepository;
 import br.com.zupacademy.everton.ecommerce.produto.CaracteristicaProduto;
 import br.com.zupacademy.everton.ecommerce.produto.Produto;
+import br.com.zupacademy.everton.ecommerce.produto.ProdutoController;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

@@ -1,4 +1,4 @@
-package br.com.zupacademy.everton.ecommerce.produto;
+package br.com.zupacademy.everton.ecommerce.produto.imagem;
 
 import org.springframework.web.multipart.MultipartFile;
 
