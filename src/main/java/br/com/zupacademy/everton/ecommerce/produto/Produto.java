@@ -82,4 +82,8 @@ public class Produto {
     public List<CaracteristicaProduto> getCaracteristicas() {
         return caracteristicas;
     }
+
+    public boolean pertenceAoUsuario(Long id) {
+        return this.id == id;
+    }
 }
