@@ -2,6 +2,7 @@ package br.com.zupacademy.everton.ecommerce.seguranca.login;
 
 public class TokenDto {
 
+
 	private String token;
 	private String tipo;
 	

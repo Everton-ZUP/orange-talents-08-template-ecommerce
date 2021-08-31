@@ -22,6 +22,13 @@ public class Categoria {
         this.nome = nome;
     }
 
+    @Deprecated
+    public Categoria(Long id, String nome, Categoria categoriaMae) {
+        this.id = id;
+        this.nome = nome;
+        this.categoriaMae = categoriaMae;
+    }
+
     public void setCategoriaMae(Categoria categoriaMae) {
         this.categoriaMae = categoriaMae;
     }

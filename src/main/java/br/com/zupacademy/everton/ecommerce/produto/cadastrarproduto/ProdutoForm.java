@@ -5,6 +5,7 @@ import br.com.zupacademy.everton.ecommerce.categoria.Categoria;
 import br.com.zupacademy.everton.ecommerce.categoria.CategoriaRepository;
 import br.com.zupacademy.everton.ecommerce.produto.CaracteristicaProduto;
 import br.com.zupacademy.everton.ecommerce.produto.Produto;
+import br.com.zupacademy.everton.ecommerce.usuario.Usuario;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.Valid;
@@ -46,9 +47,9 @@ public class ProdutoForm {
     }
 
 
-    public Produto paraProduto(CategoriaRepository categoriaRepositorio) {
+    public Produto paraProduto(CategoriaRepository categoriaRepositorio, Usuario usuariologado) {
         Categoria categoria = categoriaRepositorio.findById(idCategoria).get();
-        Produto produto = new Produto(nome,valor,quantidade,descricao,categoria);
+        Produto produto = new Produto(nome,valor,quantidade,descricao,categoria,usuariologado);
         caracteristicas.forEach(caracteristica -> produto.adicionaCaracteristica(caracteristica.toCaracteristicaProduto()));
         return produto;
     }

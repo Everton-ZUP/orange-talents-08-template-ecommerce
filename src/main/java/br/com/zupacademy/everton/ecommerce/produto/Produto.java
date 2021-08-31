@@ -1,6 +1,7 @@
 package br.com.zupacademy.everton.ecommerce.produto;
 
 import br.com.zupacademy.everton.ecommerce.categoria.Categoria;
+import br.com.zupacademy.everton.ecommerce.usuario.Usuario;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.validator.constraints.Length;
 
@@ -23,6 +24,7 @@ public class Produto {
     private LocalDateTime instanteDeCadastro = LocalDateTime.now();
     @ManyToOne @NotNull private Categoria categoria;
     @OneToMany(cascade = CascadeType.ALL) @Size(min = 3) private List<CaracteristicaProduto> caracteristicas = new ArrayList<>();
+    @ManyToOne @NotNull private Usuario usuario;
 
     @Deprecated
     public Produto() {
@@ -36,12 +38,13 @@ public class Produto {
      * @param descricao
      * @param categoria
      */
-    public Produto(String nome, BigDecimal valor, Integer quantidade, String descricao, Categoria categoria) {
+    public Produto(String nome, BigDecimal valor, Integer quantidade, String descricao, Categoria categoria, Usuario usuario) {
         this.nome = nome;
         this.valor = valor;
         this.quantidade = quantidade;
         this.descricao = descricao;
         this.categoria = categoria;
+        this.usuario = usuario;
     }
 
     public void adicionaCaracteristica(CaracteristicaProduto caracteristica){
