@@ -44,6 +44,15 @@ public class Usuario implements UserDetails {
         this.login = login;
         this.senha = new BCryptPasswordEncoder().encode(senha);
     }
+    @Deprecated
+    public Usuario(Long id, String login, String senha) {
+        this.id = id;
+        this.login = login;
+        this.senha = senha;
+    }
+
+
+
 
     public Long getId() {
         return id;
