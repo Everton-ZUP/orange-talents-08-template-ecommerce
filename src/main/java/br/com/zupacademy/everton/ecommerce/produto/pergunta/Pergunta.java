@@ -31,6 +31,10 @@ public class Pergunta{
         this.produto = produto;
     }
 
+    @Deprecated
+    public Pergunta() {
+    }
+
     public Long getId() {
         return id;
     }

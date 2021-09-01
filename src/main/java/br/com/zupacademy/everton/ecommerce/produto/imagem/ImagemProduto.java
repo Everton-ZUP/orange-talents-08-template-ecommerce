@@ -27,4 +27,16 @@ public class ImagemProduto {
         this.link = link;
         this.produto = produto;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public Produto getProduto() {
+        return produto;
+    }
 }

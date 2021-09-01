@@ -28,7 +28,6 @@ public class ProdutoDto {
         this.instanteDeCadastro = prod.getInstanteDeCadastro();
         this.idCategoria = prod.getCategoria().getId();
         this.caracteristicas = prod.getCaracteristicas();
-        prod.getCaracteristicas().forEach(car -> System.out.println(car));
     }
 
     public Long getId() {

@@ -1,6 +1,12 @@
 package br.com.zupacademy.everton.ecommerce.produto;
 
 import br.com.zupacademy.everton.ecommerce.categoria.Categoria;
+import br.com.zupacademy.everton.ecommerce.produto.imagem.ImagemProduto;
+import br.com.zupacademy.everton.ecommerce.produto.imagem.ImagemProdutoRepository;
+import br.com.zupacademy.everton.ecommerce.produto.opiniao.Opiniao;
+import br.com.zupacademy.everton.ecommerce.produto.opiniao.OpiniaoRepository;
+import br.com.zupacademy.everton.ecommerce.produto.pergunta.Pergunta;
+import br.com.zupacademy.everton.ecommerce.produto.pergunta.PerguntaRepository;
 import br.com.zupacademy.everton.ecommerce.usuario.Usuario;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.validator.constraints.Length;
@@ -12,6 +18,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 public class Produto {
@@ -89,5 +96,19 @@ public class Produto {
 
     public boolean pertenceAoUsuario(Long id) {
         return this.id == id;
+    }
+
+
+    public List<String> getLinkImagens(ImagemProdutoRepository imagemProdutoRepository) {
+        List<ImagemProduto> imagens = imagemProdutoRepository.findByProdutoId(this.id);
+        return imagens.stream().map(imagemProduto -> imagemProduto.getLink()).collect(Collectors.toList());
+    }
+
+    public List<Opiniao> getOpnioes(OpiniaoRepository opiniaoRepository) {
+        return opiniaoRepository.findByProdutoId(this.id);
+    }
+
+    public List<Pergunta> getPerguntas(PerguntaRepository perguntaRepository) {
+        return perguntaRepository.findByProdutoId(this.id);
     }
 }
