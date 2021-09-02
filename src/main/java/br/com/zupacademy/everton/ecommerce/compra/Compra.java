@@ -15,9 +15,9 @@ public class Compra {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING) @NotNull
     private StatusCompra status = StatusCompra.INICIADA;
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING) @NotNull
     private GatewayPagamento gatewayPagamento;
     @ManyToOne
     private Produto produto;
