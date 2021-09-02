@@ -39,4 +39,10 @@ public class GenericControlerAdvice {
         return erros;
     }
 
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(ErroRegraNegocio.class)
+    public ReturnError validacaoRegraDeNegocio(ErroRegraNegocio erro){
+        return erro.getReturnError();
+    }
+
 }

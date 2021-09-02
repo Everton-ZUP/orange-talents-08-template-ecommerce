@@ -111,4 +111,17 @@ public class Produto {
     public List<Pergunta> getPerguntas(PerguntaRepository perguntaRepository) {
         return perguntaRepository.findByProdutoId(this.id);
     }
+
+    /**
+     * Faz a checagem se tem estoque suficiente, se tiver faz o abate;
+     * @param quantidade
+     * @return
+     */
+    public boolean abateEstoque(Integer quantidade) {
+        if (this.quantidade < quantidade){
+            return false;
+        }
+        this.quantidade -= quantidade;
+        return true;
+    }
 }
