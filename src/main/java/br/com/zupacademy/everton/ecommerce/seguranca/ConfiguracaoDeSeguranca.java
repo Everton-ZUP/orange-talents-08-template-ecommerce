@@ -46,6 +46,7 @@ public class ConfiguracaoDeSeguranca extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers(HttpMethod.POST,"/usuarios").permitAll()
                 .antMatchers(HttpMethod.GET,"/produtos/*/detalhes").permitAll()
+                .antMatchers("/fake/**").permitAll()
                 .antMatchers("/auth").permitAll()
                 .anyRequest().authenticated()
                 .and().csrf().disable()

@@ -4,6 +4,7 @@ import br.com.zupacademy.everton.ecommerce.categoria.Categoria;
 import br.com.zupacademy.everton.ecommerce.categoria.CategoriaRepository;
 import br.com.zupacademy.everton.ecommerce.usuario.Usuario;
 import br.com.zupacademy.everton.ecommerce.usuario.cadastrousuario.UsuarioForm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
@@ -15,11 +16,9 @@ import javax.validation.Valid;
 @RequestMapping("/categorias")
 public class CategoriaController {
 
-    private final CategoriaRepository repositorio;
+    @Autowired
+    private CategoriaRepository repositorio;
 
-    public CategoriaController(CategoriaRepository repo) {
-        this.repositorio = repo;
-    }
 
     @PostMapping @Transactional @ResponseStatus(HttpStatus.CREATED)
     public CategoriaDto adicionar(@RequestBody @Valid CategoriaForm formulario){

@@ -3,6 +3,7 @@ package br.com.zupacademy.everton.ecommerce.produto.pergunta;
 import br.com.zupacademy.everton.ecommerce.produto.Produto;
 import br.com.zupacademy.everton.ecommerce.produto.ProdutoRepository;
 import br.com.zupacademy.everton.ecommerce.usuario.Usuario;
+import br.com.zupacademy.everton.ecommerce.utils.EnviadorDeEmail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

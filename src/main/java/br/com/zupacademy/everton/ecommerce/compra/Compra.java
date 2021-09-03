@@ -71,4 +71,17 @@ public class Compra {
     public String getRetornoGatewayPagamento() {
         return this.gatewayPagamento.urlRetorno(this.id);
     }
+
+    @Override
+    public String toString() {
+        return "Compra{" +
+                "id=" + id +
+                ", status=" + status +
+                ", gatewayPagamento=" + gatewayPagamento +
+                ", produto=" + produto +
+                ", quantidade=" + quantidade +
+                ", comprador=" + comprador +
+                ", valorProduto=" + valorProduto +
+                '}';
+    }
 }
