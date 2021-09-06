@@ -11,11 +11,14 @@ import br.com.zupacademy.everton.ecommerce.produto.Produto;
 import br.com.zupacademy.everton.ecommerce.produto.ProdutoRepository;
 import br.com.zupacademy.everton.ecommerce.usuario.Usuario;
 import br.com.zupacademy.everton.ecommerce.usuario.UsuarioRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.json.JsonTest;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.json.JacksonTester;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 
@@ -46,7 +49,6 @@ public class UtilsTests {
         compraRepository.deleteAll();
         produtoRepository.deleteAll();
         categoriaRepository.deleteAll();
-        usuarioRepository.deleteAll();
     }
 
     public Categoria criaCategoria(){
@@ -68,8 +70,7 @@ public class UtilsTests {
     }
 
     public Usuario criaUsuario() {
-        Usuario usuario = new Usuario("teste@teste.com","123456");
-        usuarioRepository.save(usuario);
+        Usuario usuario = usuarioRepository.findByLogin("everton@zup.com.br").get();
         return usuario;
     }
 

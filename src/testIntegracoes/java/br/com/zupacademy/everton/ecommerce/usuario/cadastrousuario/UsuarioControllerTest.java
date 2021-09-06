@@ -1,5 +1,6 @@
 package br.com.zupacademy.everton.ecommerce.usuario.cadastrousuario;
 
+import br.com.zupacademy.everton.ecommerce.UtilsTests;
 import com.google.gson.Gson;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +14,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
-@AutoConfigureMockMvc
-@ActiveProfiles("test")
-class UsuarioControllerTest {
+class UsuarioControllerTest extends UtilsTests {
 
     @Autowired
     MockMvc mockMvc;
@@ -25,7 +23,7 @@ class UsuarioControllerTest {
 
     @Test
     void adicionar() throws Exception {
-        UsuarioForm formulario = new UsuarioForm("everton3@zup.com.br","123456");
+        UsuarioForm formulario = new UsuarioForm("everton@zup.com.br","123456");
         mockMvc.perform(MockMvcRequestBuilders
                         .post("/usuarios")
                         .content(gson.toJson(formulario))

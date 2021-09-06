@@ -6,7 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(url = "localhost:8080/fake/", name = "api-fake")
+@FeignClient(url = "${feign.client.fake.url}", name = "api-fake")
 public interface ConectorComApisExternas {
 
     @PostMapping(value = "/fiscal")
